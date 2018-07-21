@@ -9,9 +9,9 @@ public:
 	~Platform();
 
 	void Draw(sf::RenderWindow &window);
-	Collider GetCollider() { return Collider(body); }
+	Collider GetCollider() { return Collider(daisy); }
 
 private:
-	sf::RectangleShape body;
+	sf::RectangleShape daisy;
 };
 

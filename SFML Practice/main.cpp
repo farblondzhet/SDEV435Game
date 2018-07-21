@@ -24,10 +24,8 @@ int main() {
 	textureDaisy.loadFromFile("DaisySprite.png");
 	sf::Texture backgrnd;
 
-	Player player(&textureDaisy, sf::Vector2u(10, 2), 0.5f, 100.0f, 200);
-	Platform platform1(nullptr, sf::Vector2f(1000.0f, 200.0f), sf::Vector2f(500.0f, 500.0f));
-
-	sf::Vector2f direction;
+	Player player(&textureDaisy, sf::Vector2u(10, 2), 0.3f, 100.0f, 200);
+	Platform platform1(nullptr, sf::Vector2f(1000.0f, 200.0f), sf::Vector2f(500.0f, 500.0f));		
 
 	float deltaTime = 0.0f;
 	sf::Clock clock;
@@ -45,8 +43,6 @@ int main() {
 
 	sf::Sprite spriteBackground;
 	spriteBackground.setTexture(backgrnd);
-
-
 
 	while (window.isOpen())
 	{
@@ -73,10 +69,14 @@ int main() {
 		}
 
 		player.Update(deltaTime);
+
+		sf::Vector2f direction;
+
 		platform1.GetCollider().CheckCollision(player.GetCollider(), direction, 0.0f);
 		view.setCenter(player.GetPosition());
 		window.clear(sf::Color(172, 241, 227));		
 		window.setView(view);		
+		window.draw(spriteBackground);
 		platform1.Draw(window);
 		player.Draw(window);
 		window.display();
