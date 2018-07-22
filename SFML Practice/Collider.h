@@ -16,4 +16,3 @@ public:
 private:
 	sf::RectangleShape& daisy;
 };
-

@@ -2,7 +2,7 @@
 
 
 
-Collider::Collider(sf::RectangleShape& daisy) : 
+Collider::Collider(sf::RectangleShape& daisy) :
 	daisy(daisy)
 {
 }
@@ -28,14 +28,14 @@ bool Collider::CheckCollision(Collider & other, sf::Vector2f &direction, float p
 	if (intersectX < 0.0f && intersectY < 0.0f)
 	{
 		push = std::min(std::max(push, 0.0f), 1.0f);
-		
+
 		if (intersectX > intersectY) {
 			if (deltaX > 0.0f) {
 				Move(intersectX * (1.0f - push), 0.0f);
 				other.Move(-intersectX * push, 0.0f);
 
 				direction.x = 1.0f;
-				direction.y = 0.0f;	
+				direction.y = 0.0f;
 			}
 
 			else {
@@ -64,8 +64,7 @@ bool Collider::CheckCollision(Collider & other, sf::Vector2f &direction, float p
 			}
 		}
 		return true;
-			}
-		
-	return false;
-	}	
+	}
 
+	return false;
+}
