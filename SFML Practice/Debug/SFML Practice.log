@@ -1,3 +1,5 @@
-﻿  Collider.cpp
+﻿  main.cpp
+c:\users\ari\documents\visual studio 2015\projects\sfml practice\sfml practice\main.cpp(46): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\ari\documents\visual studio 2015\projects\sfml practice\sfml practice\main.cpp(54): warning C4305: 'initializing': truncation from 'double' to 'float'
   SFML Practice.vcxproj -> C:\Users\Ari\Documents\Visual Studio 2015\Projects\SFML Practice\Debug\SFML Practice.exe
   SFML Practice.vcxproj -> C:\Users\Ari\Documents\Visual Studio 2015\Projects\SFML Practice\Debug\SFML Practice.pdb (Full PDB)

@@ -1,31 +1,42 @@
 #pragma once
 #include <SFML\Graphics.hpp>
 #include "Animation.h"
-#include "Collider.h"
+#include <iostream>
 
 class Player
 {
 public:
-	Player(sf::Texture* texture, sf::Vector2u imgNum, float switchTime, float speed, float jumpHeight);
-	~Player();
+	Player(sf::Vector2f size) {
+		daisy.setSize(size);
+	}
 
-	void Update(float deltaTime);
-	void Draw(sf::RenderWindow &window);
-	void OnCollision(sf::Vector2f direction);
+	void Draw(sf::RenderWindow &window) {
+		window.draw(daisy);
+	}
 
-	sf::Vector2f GetPosition() { return daisy.getPosition(); }
-	Collider GetCollider() { return Collider(daisy); }
+	sf::Vector2f GetPosition() { return daisy.getPosition(); }	
+
+
+	void move(sf::Vector2f distance) {
+		daisy.move(distance);
+	}
+
+	void setPos(sf::Vector2f newPos) {
+		daisy.setPosition(newPos);
+	}
+
+	const float getY() {
+		return daisy.getPosition().y;
+	}
+
 
 private:
 	sf::RectangleShape daisy;
-	Animation animation;
+	//Animation animation;
 	int row;
-	int col;
-	float speed;
+	int col;	
 	bool faceRight;
-
-	sf::Vector2f velocity;
-	bool canJump;
-	float jumpHeight;
+	
+	bool canJump;	
 };
 
