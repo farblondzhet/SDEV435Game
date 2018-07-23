@@ -24,7 +24,7 @@ int main() {
 	sf::Texture backgrnd;
 
 	Player player(&textureDaisy, sf::Vector2u(10, 2), 0.3f, 100.0f, 200);
-	Platform platform1(nullptr, sf::Vector2f(1000.0f, 200.0f), sf::Vector2f(500.0f, 500.0f));
+	Platform platform1(nullptr, sf::Vector2f(1000.0f, 120.0f), sf::Vector2f(500.0f, 500.0f));
 
 	float deltaTime = 0.0f;
 	sf::Clock clock;
@@ -71,7 +71,7 @@ int main() {
 
 		sf::Vector2f direction;
 
-		platform1.GetCollider().CheckCollision(player.GetCollider(), direction, 1.0f);
+		platform1.GetCollider().CheckCollision(player.GetCollider(), direction, 1.0f);		
 		view.setCenter(player.GetPosition());
 		window.clear(sf::Color(172, 241, 227));
 		window.setView(view);
@@ -79,6 +79,7 @@ int main() {
 		platform1.Draw(window);
 		player.Draw(window);
 		window.display();
+		
 	}
 
 
