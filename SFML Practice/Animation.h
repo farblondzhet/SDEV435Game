@@ -8,7 +8,7 @@ public:
 	Animation(sf::Texture* texture, sf::Vector2u imgNum, float switchTime);
 	~Animation();
 	 
-	void Update(int row, int col, float deltaTime, bool faceRight);
+	void Update(int row, float deltaTime, bool faceRight);
 
 //Variable Declarations
 	sf::IntRect textRect;

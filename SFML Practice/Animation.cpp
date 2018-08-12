@@ -20,10 +20,9 @@ Animation::~Animation()
 {
 }
 
-void Animation::Update(int row, int col, float deltaTime, bool faceRight)
+void Animation::Update(int row, float deltaTime, bool faceRight)
 {
-	currImg.y = row;
-	currImg.x = col;
+	currImg.y = row;	
 	totalTime += deltaTime;
 
 	if (totalTime >= switchTime) {
@@ -32,13 +31,13 @@ void Animation::Update(int row, int col, float deltaTime, bool faceRight)
 		currImg.x++;
 		currImg.y++;
 
-			if (currImg.x >= 4) {
+			if (currImg.x >= imgNum.x)  {
 				currImg.x = 0;
 		}
 	
 	}	
 	textRect.top = currImg.y * textRect.height;
-
+	////////////////////////////////////////
 	if (faceRight) {
 		textRect.left = currImg.x * textRect.width;
 		textRect.width = abs(textRect.width);

@@ -9,7 +9,7 @@ public:
 
 	void Move(float dx, float dy) { daisy.move(dx, dy); }
 
-	bool CheckCollision(Collider& other, sf::Vector2f &direction, float push);
+	bool CheckCollision(Collider& other, sf::Vector2f& direction, float push);	
 	sf::Vector2f GetPosition() { return daisy.getPosition(); }
 	sf::Vector2f GetHalfSize() { return daisy.getSize() / 2.0f; }
 

@@ -30,6 +30,9 @@
     <ClCompile Include="Collider.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CoinCollider.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="Coins.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -44,8 +47,11 @@
     <ClInclude Include="Platform.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CoinCollider.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="Collider.h">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Coins.h">
       <Filter>Header Files</Filter>

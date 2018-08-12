@@ -1,6 +1,7 @@
 #pragma once
 #include <SFML\Graphics.hpp>
 #include "Collider.h"
+#include "Player.h"
 
 class Platform
 {
@@ -9,7 +10,7 @@ public:
 	~Platform();
 
 	void Draw(sf::RenderWindow &window);
-	Collider GetCollider() { return Collider(daisy); }
+	Collider GetCollider() { return Collider(daisy); }	
 
 private:
 	sf::RectangleShape daisy;

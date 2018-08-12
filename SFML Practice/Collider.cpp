@@ -12,7 +12,7 @@ Collider::~Collider()
 {
 }
 
-bool Collider::CheckCollision(Collider & other, sf::Vector2f &direction, float push)
+bool Collider::CheckCollision(Collider & other, sf::Vector2f& direction, float push)
 {
 	sf::Vector2f otherPosition = other.GetPosition();
 	sf::Vector2f otherHalfSize = other.GetHalfSize();
@@ -25,10 +25,13 @@ bool Collider::CheckCollision(Collider & other, sf::Vector2f &direction, float p
 	float intersectX = abs(deltaX) - (otherHalfSize.x + thisHalfSize.x);
 	float intersectY = abs(deltaY) - (otherHalfSize.y + thisHalfSize.y);
 
+	//If objects are colliding
 	if (intersectX < 0.0f && intersectY < 0.0f)
 	{
+		//determine whether collision object is moveable or not
 		push = std::min(std::max(push, 0.0f), 1.0f);
 
+		//If object should move on x axis upon collision
 		if (intersectX > intersectY) {
 			if (deltaX > 0.0f) {
 				Move(intersectX * (1.0f - push), 0.0f);
@@ -37,7 +40,7 @@ bool Collider::CheckCollision(Collider & other, sf::Vector2f &direction, float p
 				direction.x = 1.0f;
 				direction.y = 0.0f;
 			}
-
+			
 			else {
 				Move(-intersectX * (1.0f - push), 0.0f);
 				other.Move(intersectX * push, 0.0f);
@@ -47,6 +50,7 @@ bool Collider::CheckCollision(Collider & other, sf::Vector2f &direction, float p
 			}
 		}
 		else {
+			//If object should move on y axis upon collision
 			if (deltaY > 0.0f) {
 				Move(0.0f, intersectY * (1.0f - push));
 				other.Move(0.0f, -intersectY * push);

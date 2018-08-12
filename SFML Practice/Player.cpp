@@ -23,24 +23,27 @@ Player::~Player()
 {
 }
 
+
 void Player::Update(float deltaTime)
 {
 	velocity.x = 0.0f;
 
+	////////////////////////
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
 		velocity.x -= speed;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
 		velocity.x += speed;
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) && canJump) {
-		canJump = false;
+		canJump = false;  
 		velocity.y = -sqrtf(2.0f * 981.0f * jumpHeight);
 	}
 
 	velocity.y += 981.0f * deltaTime;
 
 	if (velocity.x == 0.0f) {
-		row = 1;
+		row = 0;
+		col = 0;
 
 	}
 	else {
@@ -54,7 +57,7 @@ void Player::Update(float deltaTime)
 		}
 	}
 
-	animation.Update(row, col, deltaTime, faceRight);
+	animation.Update(row, deltaTime, faceRight);
 	daisy.setTextureRect(animation.textRect);
 	daisy.move(velocity * deltaTime);
 }
@@ -64,20 +67,41 @@ void Player::Draw(sf::RenderWindow &window)
 	window.draw(daisy);
 }
 
-void Player::OnCollision(sf::Vector2f direction)
-{
+
+///////////////////////////////
+bool Player::OnCollision(sf::Vector2f direction)
+{		
+
 	if (direction.x < 0.0f) {
+
+		//Colliding with object on left
 		velocity.x = 0.0f;
+		damage = true;
 	}
 	else if (direction.x > 0.0f) {
+
+		//Colliding with object on right 
 		velocity.x = 0.0f;
+		damage = true;
 	}
 
 	if (direction.y < 0.0f) {
+
+		//Touching Ground or monster
 		velocity.y = 0.0f;
-		canJump = true;
+		canJump = true;		
 	}
 	else if (direction.y > 0.0f) {
+
+		//Colliding with object above
 		velocity.y = 0.0f;
+		damage = true;
 	}
+
+	return damage;	
+}
+
+/////////////////////////////
+bool Player::loseHeart() {
+	return damage;	
 }

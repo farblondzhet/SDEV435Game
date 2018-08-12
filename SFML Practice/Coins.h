@@ -1,26 +1,17 @@
 #pragma once
-#include <iostream>
 #include <SFML\Graphics.hpp>
-#include "Collider.h"
+#include "CoinCollider.h"
 
-class Coins{
+class Coins
+{
 public:
-	Coins(const sf::RenderWindow &window, sf::Vector2f size, Player player) {
-		coin.setSize(size);
-		coin.setFillColor(sf::Color::Yellow);
-	}
+	Coins(sf::Texture *texture, sf::Vector2f size, sf::Vector2f position);
+	~Coins();
 
-	void drawTo(sf::RenderWindow &window) {
-		window.draw(coin);
-	}
+	void Draw(sf::RenderWindow &window);
+	CoinCollider GetCoinCollider() { return CoinCollider(daisy); }
 
-	sf::FloatRect getGlobalBounds() {
-		return coin.getGlobalBounds();
-	}
-
-	void setPos(sf::Vector2f newPos) {
-		coin.setPosition(newPos);
-	}
 private:
-	sf::RectangleShape coin;
+	sf::RectangleShape daisy;
 };
+
