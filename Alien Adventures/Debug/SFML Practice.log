@@ -1,0 +1,20 @@
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (Alien Adventures.vcxproj, SFML Practice.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  main.cpp
+c:\users\ari\documents\visual studio 2015\projects\sfml practice\alien adventures\main.cpp(21): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
+c:\users\ari\documents\visual studio 2015\projects\sfml practice\alien adventures\main.cpp(104): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\ari\documents\visual studio 2015\projects\sfml practice\alien adventures\main.cpp(140): warning C4018: '<': signed/unsigned mismatch
+c:\users\ari\documents\visual studio 2015\projects\sfml practice\alien adventures\main.cpp(157): warning C4018: '<': signed/unsigned mismatch
+c:\users\ari\documents\visual studio 2015\projects\sfml practice\alien adventures\main.cpp(167): warning C4018: '<': signed/unsigned mismatch
+c:\users\ari\documents\visual studio 2015\projects\sfml practice\alien adventures\main.cpp(168): error C3867: 'Platform::Draw': non-standard syntax; use '&' to create a pointer to member
+c:\users\ari\documents\visual studio 2015\projects\sfml practice\alien adventures\main.cpp(174): warning C4018: '<': signed/unsigned mismatch
+c:\users\ari\documents\visual studio 2015\projects\sfml practice\alien adventures\main.cpp(191): warning C4018: '<': signed/unsigned mismatch
+c:\users\ari\documents\visual studio 2015\projects\sfml practice\alien adventures\main.cpp(201): warning C4018: '<': signed/unsigned mismatch
+c:\users\ari\documents\visual studio 2015\projects\sfml practice\alien adventures\main.cpp(202): error C3867: 'Platform::Draw': non-standard syntax; use '&' to create a pointer to member
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  Player.cpp
+  Platform.cpp
+  Database.cpp
+  Collider.cpp
+  Coins.cpp
+  Animation.cpp

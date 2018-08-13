@@ -1,7 +1,1 @@
-﻿  main.cpp
-c:\users\ari\documents\visual studio 2015\projects\sfml practice\sfml practice\main.cpp(20): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
-c:\users\ari\documents\visual studio 2015\projects\sfml practice\sfml practice\main.cpp(82): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\ari\documents\visual studio 2015\projects\sfml practice\sfml practice\main.cpp(135): warning C4018: '<': signed/unsigned mismatch
-c:\users\ari\documents\visual studio 2015\projects\sfml practice\sfml practice\main.cpp(151): warning C4018: '<': signed/unsigned mismatch
-  SFML Practice.vcxproj -> C:\Users\Ari\documents\visual studio 2015\Projects\SFML Practice\Debug\SFML Practice.exe
-  SFML Practice.vcxproj -> C:\Users\Ari\documents\visual studio 2015\Projects\SFML Practice\Debug\SFML Practice.pdb (Full PDB)
+﻿
